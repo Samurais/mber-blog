@@ -3,25 +3,21 @@ require('styles/App.css');
 
 import React from 'react';
 
-import Foo1Component from './Foo1Component';
+import Navigator from './Navigator';
 
-let yeomanImage = require('../images/yeoman.png');
+class AppComponent extends React.Component < any, any > {
 
-class AppComponent extends React.Component<any, any> {
-    
-    constructor(props){
+    constructor(props) {
         super(props);
-        super.state = {count: parseInt(props.initialVal)};
-        console.log(props)
+        super.state = {
+            count: parseInt(props.initialVal)
+        };
+        this.displayName = "Main Frame";
     }
-    
+
     render() {
-        return ( 
-            < div className = "index" >
-              <Foo1Component> </Foo1Component>
-            < img src = { yeomanImage }
-            alt = "Yeoman Generator" / >
-            < div className = "notice" > Please edit < code > src / components / Main.js < /code> to get started!</div >
+        return ( < div className = "index" >
+            <Navigator> </Navigator> < div className = "notice" > Please edit < code > src / components / Main.js < /code> to get started!</div >
             < /div>
         );
     }
